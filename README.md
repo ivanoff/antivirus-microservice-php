@@ -2,7 +2,7 @@
 
 ## Antivirus Microservice PHP Client
 
-This is client for a free and fully functional microservice for antivirus file checking using `ClamAV`.
+This is client for a free and fully functional [Antivirus Microservice Server](https://github.com/ivanoff/Antivirus-Microservice?tab=readme-ov-file#antivirus-microservice-server)
 
 ## Example
 
