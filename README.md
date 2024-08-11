@@ -1,8 +1,23 @@
 ![antivirus-microservice](./assets/logo2.png)
 
-# Antivirus Microservice PHP Client
+## Antivirus Microservice PHP Client
 
 This is a PHP client for the free and fully functional [Antivirus Microservice Server](https://github.com/ivanoff/Antivirus-Microservice). It allows you to easily integrate virus scanning capabilities into your PHP applications.
+
+## Table of Contents
+
+- [Antivirus Microservice PHP Client](#antivirus-microservice-php-client)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [Configuration](#configuration)
+- [Error Handling](#error-handling)
+- [Requirements](#requirements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+- [Created by](#created-by)
 
 ## Installation
 
