@@ -1,15 +1,27 @@
 ![antivirus-microservice](./assets/logo2.png)
 
-## Antivirus Microservice PHP Client
+# Antivirus Microservice PHP Client
 
-This is client for a free and fully functional [Antivirus Microservice Server](https://github.com/ivanoff/Antivirus-Microservice?tab=readme-ov-file#antivirus-microservice-server)
+This is a PHP client for the free and fully functional [Antivirus Microservice Server](https://github.com/ivanoff/Antivirus-Microservice). It allows you to easily integrate virus scanning capabilities into your PHP applications.
 
-## Example
+## Installation
+
+You can install this package via Composer:
+
+```bash
+composer require ivanoff/antivirus-microservice
+```
+
+## Usage
+
+Here's a basic example of how to use the Antivirus Microservice client:
 
 ```php
 <?php
 
-$antivirus = new AntivirusMicroservice();
+require_once 'vendor/autoload.php';
+
+$antivirus = new AntivirusMicroservice('http://localhost:3000');
 $result = $antivirus->checkFile('/path/to/your/file.txt');
 
 if ($result['ok']) {
@@ -19,23 +31,44 @@ if ($result['ok']) {
 }
 ```
 
-### Notes
+## API
 
-Make sure the Antivirus Microservice server is running and accessible at the URL you provide when initializing the `Antivirus` client.
+The `AntivirusMicroservice` class provides the following method:
 
-For more information on setting up and using the server, refer to the [Antivirus Microservice Server](https://github.com/ivanoff/Antivirus-Microservice?tab=readme-ov-file#antivirus-microservice-server)
+- `checkFile($filePath)`: Scans the provided file for viruses. Returns an array with:
+  - `ok`: boolean indicating whether the file is clean (`true`) or infected (`false`)
+  - `viruses`: an array of detected virus names (only present if `ok` is `false`)
 
-## License
+## Configuration
 
-This project is distributed under the `MIT` license. See the [LICENSE](./LICENSE) file for more information.
+When initializing the `AntivirusMicroservice` class, you can specify the URL of your Antivirus Microservice server. By default, it uses `http://localhost:3000`.
+
+```php
+$antivirus = new AntivirusMicroservice('http://your-custom-url:port');
+```
+
+## Error Handling
+
+The client handles basic errors:
+- If the file is not found, it returns `['ok' => false, 'viruses' => ['File not found']]`.
+- If there's an error communicating with the server, it returns `['ok' => false, 'viruses' => ['Error checking file']]`.
+
+## Requirements
+
+- PHP 7.0 or higher
+- cURL extension enabled
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Support
 
-If you encounter any problems or have questions, please open an issue in the project repository.
+If you encounter any problems or have questions, please open an issue in the [project repository](https://github.com/ivanoff/antivirus-microservice-php).
 
 ## Created by
 
